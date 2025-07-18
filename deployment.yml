@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubepro-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kubepro
+  template:
+    metadata:
+      labels:
+        app: kubepro
+    spec:
+      containers:
+        - name: kubepro
+          image: vinodhconnects/web234
+          ports:
+            - containerPort: 80
+          
